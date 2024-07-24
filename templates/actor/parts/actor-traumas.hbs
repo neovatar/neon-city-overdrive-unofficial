@@ -1,0 +1,17 @@
+<div>
+  <h3 class="ncou-hacked-font">Traumas</h3>
+  <ol class="items-list ncou-items-list ncou-trauma-list">
+    {{#each traumas as |item id|}}
+      <li class="item flexrow" data-item-id="{{item._id}}">
+        <div class="item-name">
+          <a class="item-control item-edit" title="{{localize "DOCUMENT.Update" type="Trauma"}}"><h4>{{item.name}}</h4></a>
+        </div>
+      </li>
+    {{/each}}
+    <li class="flex-group-right">
+      <a class="item-control item-create" title="{{localize "DOCUMENT.Create" type="Trauma"}}" data-type="trauma">
+        <i class="fas fa-plus"></i>
+      </a>
+    </li>
+  </ol>
+</div>

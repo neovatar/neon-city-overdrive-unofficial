@@ -1,0 +1,36 @@
+<div>
+  <h3 class="ncou-hacked-font">Trademarks</h3>
+  {{#each system.trademarks as | trademark key |}}
+    <div class="flex-group-left">
+      <ol class="items-list">
+        {{#each ../edges as |edges trademarkid|}}
+          {{#if (eq trademarkid key)}}
+            <div class="trademark-section">
+              <li class="flexrow edge-header">
+                <div class="ncou-input-cyber ncou-font-medium">
+                  <input name="system.trademarks.{{key}}.name" type="text" value="{{trademark.name}}"/>
+                </div>
+              </li>
+              <ol class="items-list ncou-items-list ncou-edge-list ncou-box-notop">
+                {{#each edges as |item id|}}
+                  <li class="item edge-name flexrow" data-item-id="{{item._id}}">
+                    <div class="flexrow">
+                      <a class="item-control item-edit" title="{{localize "DOCUMENT.Create" type="Edge"}}">
+                        <div>{{item.name}}</div>
+                      </a>
+                    </div>
+                  </li>
+                {{/each}}
+              <li class="flex-group-right">
+                <a class="item-control item-create" title="{{localize "DOCUMENT.Create" type="Edge"}}" data-type="edge" data-trademarkid="{{trademarkid}}">
+                  <i class="fas fa-plus"></i>
+                </a>
+              </li>
+              </ol>
+            </div>
+          {{/if}}
+        {{/each}}
+      </ol>
+    </div>
+  {{/each}}
+</div>

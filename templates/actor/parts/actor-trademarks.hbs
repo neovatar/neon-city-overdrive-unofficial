@@ -1,0 +1,45 @@
+<div>
+  <h3 class="ncou-hacked-font">Trademarks</h3>
+  <div class="flex-group-left">
+    <ol class="items-list">
+      {{#each trademarks as |trademark|}}
+         <div class="trademark-section">
+          <li class="item flexrow" data-trademarkid="{{trademark._id}}" data-item-id="{{trademark._id}}">
+            <div class="ncou-cyber">
+              <a class="item-control item-edit" title="{{localize "DOCUMENT.Modify" type="Trademark"}}">
+                <div class="ncou-trademark-header">{{trademark.name}}</div>
+              </a>
+            </div>
+          </li>
+          <li>
+            <ol class="items-list ncou-items-list ncou-edge-list ncou-box-notop">
+            {{#each ../edges as |edges trademarkid|}}
+              {{#if (eq trademarkid trademark._id)}}  
+                {{#each edges as |item id|}}
+                  <li class="item edge-name flexrow" data-trademarkid="{{trademark._id}}" data-item-id="{{item._id}}">
+                    <div class="flexrow">
+                      <a class="item-control item-edit" title="{{localize "DOCUMENT.Create" type="Edge"}}">
+                        <div>{{item.name}}</div>
+                      </a>
+                    </div>
+                  </li>
+                {{/each}}
+              {{/if}}
+            {{/each}}
+              <li class="flex-group-right" data-trademarkid="{{trademark._id}}">
+                <a class="item-control item-create" title="{{localize "DOCUMENT.Create" type="Edge"}}" data-type="edge" data-trademarkid="{{trademark._id}}">
+                  <i class="fas fa-plus"></i>
+                </a>
+              </li>
+            </ol>
+          </li>
+        </div>
+      {{/each}}
+      <li class="flex-group-left">
+          <a class="item-control item-create" title="{{localize "DOCUMENT.Create" type="Trademark"}}" data-type="trademark">
+            <i class="fas fa-plus"></i>
+          </a>
+      </li>
+    </ol>
+  </div>
+</div>

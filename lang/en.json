@@ -1,0 +1,31 @@
+{
+  "NCOU": {
+    "SheetLabels": {
+      "Actor": "ncou Actor Sheet",
+      "Item": "ncou Item Sheet"
+    },
+    "Effect": {
+      "Source": "Source",
+      "Toggle": "Toggle Effect",
+      "Temporary": "Temporary Effects",
+      "Passive": "Passive Effects",
+      "Inactive": "Inactive Effects"
+    }
+  },
+
+  "TYPES": {
+    "Actor": {
+      "character": "Character",
+      "npc": "NPC"
+    },
+    "Item": {
+      "action": "Action",
+      "edge": "Edge",
+      "item": "Gear",
+      "flaw": "Flaw",
+      "tag": "Tag",
+      "trademark": "Trademark",
+      "trauma": "Trauma"
+    }
+  }
+}

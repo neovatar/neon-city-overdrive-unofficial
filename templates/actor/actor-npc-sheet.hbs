@@ -1,0 +1,73 @@
+<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
+
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    <div class="header-fields">
+      <div class="flexrow">
+        <div class="ncou-input-cyber ncou-font-big">
+          <input name="name" type="text" value="{{actor.name}}" placeholder="Name"/>
+        </div>
+      </div>
+      <div class="resources grid grid-12col">
+        <div class="resource flexcol flex-left grid-span-3">
+          <div class="ability flexrow flex-left flex-group-left">
+            <div class="resource-content flexrow flex-group-center">
+              <label class="ncou-hacked-font ncou-font-medium">Hits </label>
+              <div class="ncou-input-cyber-small">
+              <input type="text" name="system.hits.value" title="current" value="{{system.hits.value}}" data-dtype="Number"/>
+              </div>
+              <span>&nbsp;/</span>
+              <div class="ncou-input-cyber-small">
+              <input type="text" name="system.hits.max" title="maximum" value="{{system.hits.max}}" data-dtype="Number"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="resource flexcol flex-right grid-span-1">
+          <div class="resource-content flexrow flex-right">
+            <label class="ncou-hacked-font ncou-font-medium">Drive</label>
+          </div>
+        </div>
+        <div class="resource flexcol flex-right grid-span-8">
+          <div class="ncou-input-cyber-small">
+            <input type="text" name="system.drive.description" value="{{system.drive.description}}"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    {{!-- Default tab is specified in actor-sheet.mjs --}}
+    <a class="item" data-tab="statistics">Statistics</a>
+    <a class="item" data-tab="biography">Biography</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Owned Features Tab --}}
+    <div class="tab features" data-group="primary" data-tab="statistics">
+      <section class="grid grid-2col">
+        <section class="main">
+          {{> "systems/neon-city-overdrive-unofficial/templates/actor/parts/actor-tags.hbs"}}
+        </section>
+        <section class="main">
+          {{> "systems/neon-city-overdrive-unofficial/templates/actor/parts/actor-actions.hbs"}}
+        </section>
+      </section>
+    </div>
+
+    {{!-- Biography Tab --}}
+    <div class="tab biography" data-group="primary" data-tab="biography">
+      {{!-- If you want TinyMCE editors to output inline rolls when rendered, you need to pass the actor's roll data to the rollData property. --}}
+      {{editor system.biography target="system.biography" rollData=rollData button=true owner=owner editable=editable}}
+    </div>
+
+  </section>
+</form>
+
+{{log system}}
+

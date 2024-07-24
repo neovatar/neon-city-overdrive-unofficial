@@ -1,0 +1,46 @@
+{
+  "id": "neon-city-overdrive-unofficial",
+  "title": "Neon City Overdrive (Unofficial)",
+  "description": "The Neon City Overdrive (Unofficial) system for FoundryVTT!",
+  "authors": [
+    {
+      "name": "neovatar",
+      "discord": "neovatar"
+    }
+  ],
+  "url": "Replace this with a link to your public repository",
+  "license": "LICENSE.md",
+  "readme": "README.md",
+  "bugs": "Replace this with a link to file issues or tickets",
+  "changelog": "CHANGELOG.md",
+  "media": [
+    {
+      "type": "setup",
+      "url": "systems/neon-city-overdrive-unofficial/assets/ncou-setup.webp",
+      "thumbnail": "systems/neon-city-overdrive-unofficial/assets/ncou-setup.webp"
+    }
+  ],
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": 11,
+    "verified": "11.315"
+  },
+  "esmodules": ["module/neon-city-overdrive-unofficial.mjs"],
+  "styles": ["css/neon-city-overdrive-unofficial.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "packs": [],
+  "packFolders": [],
+  "socket": false,
+  "manifest": "Replace this with a link to the /latest release system.json so people can receive updates after they've installed the system",
+  "download": "This must link to a .zip file of the current version",
+  "background": "systems/neon-city-overdrive-unofficial/assets/ncou-setup.webp",
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "primaryTokenAttribute": "hits"
+}

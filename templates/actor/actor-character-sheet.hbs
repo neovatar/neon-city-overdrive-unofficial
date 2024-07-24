@@ -1,0 +1,100 @@
+<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
+
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    <div class="header-fields">
+      <div class="flexrow">
+        <div class="ncou-input-cyber ncou-font-big">
+          <input name="name" type="text" value="{{actor.name}}" placeholder="Name"/>
+        </div>
+      </div>
+      <div class="resources grid grid-12col">
+        <div class="resource flexcol grid-span-3">
+          <div class="ability flexrow flex-group-center">
+            <label class="ncou-hacked-font ncou-font-medium">Hits</label>
+            <div class="resource-content flexrow flex-center flex-group-center">
+              <div class="ncou-input-cyber-small">
+              <input type="text" name="system.hits.value" title="current" value="{{system.hits.value}}" data-dtype="Number"/>
+              </div>
+              <span>&nbsp;/</span>
+              <div class="ncou-input-cyber-small">
+              <input type="text" name="system.hits.max" title="maximum" value="{{system.hits.max}}" data-dtype="Number"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="resource flexcol grid-span-3">
+          <div class="ability flexrow flex-group-center">
+            <label class="ncou-hacked-font ncou-font-medium">Stunt Points</label>
+            <div class="resource-content flexrow flex-center flex-between flex-group-center">
+              <div class="ncou-input-cyber-small">
+                <input type="text" name="system.stuntpoints.value" title="current" value="{{system.stuntpoints.value}}" data-dtype="Number"/>
+              </div>
+              <span>&nbsp;/</span>
+              <div class="ncou-input-cyber-small">
+                <input type="text" name="system.stuntpoints.max" title="maximum" value="{{system.stuntpoints.max}}" data-dtype="Number"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="resource flexcol grid-span-1"></div>
+        <div class="resource flexcol grid-span-2">
+          <div class="resource-content flexrow flex-group-center">
+            <label class="ncou-hacked-font ncou-font-medium">Lever&shy;age</label>
+            <div class="ncou-input-cyber-small">
+              <input type="text" name="system.leverage.value" value="{{system.leverage.value}}" data-dtype="Number"/>
+            </div>
+          </div>
+        </div>
+        <div class="resource flexcol grid-span-2">
+          <div class="resource-content flexrow flex-group-center">
+            <label class="ncou-hacked-font ncou-font-medium">EXP</label>
+            <div class="ncou-input-cyber-small">
+              <input type="text" name="system.exp.value" value="{{system.exp.value}}" data-dtype="Number"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    {{!-- Default tab is specified in actor-sheet.mjs --}}
+    <a class="item" data-tab="statistics">Statistics</a>
+    <a class="item" data-tab="biography">Biography</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Owned Features Tab --}}
+    <div class="tab features" data-group="primary" data-tab="statistics">
+      <section class="grid grid-2col">
+        <section class="main">
+          {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
+          {{> "systems/neon-city-overdrive-unofficial/templates/actor/parts/actor-trademarks.hbs"}}
+        </section>
+        <section class="main">
+          {{> "systems/neon-city-overdrive-unofficial/templates/actor/parts/actor-conditions.hbs"}}
+          {{> "systems/neon-city-overdrive-unofficial/templates/actor/parts/actor-traumas.hbs"}}
+          {{> "systems/neon-city-overdrive-unofficial/templates/actor/parts/actor-flaws.hbs"}}
+          {{> "systems/neon-city-overdrive-unofficial/templates/actor/parts/actor-gear.hbs"}}
+          {{> "systems/neon-city-overdrive-unofficial/templates/actor/parts/actor-drive.hbs"}}
+        </section>
+
+      </section>
+    </div>
+
+    {{!-- Biography Tab --}}
+    <div class="tab biography" data-group="primary" data-tab="biography">
+      {{!-- If you want TinyMCE editors to output inline rolls when rendered, you need to pass the actor's roll data to the rollData property. --}}
+      {{editor system.biography target="system.biography" rollData=rollData button=true owner=owner editable=editable}}
+    </div>
+
+  </section>
+</form>
+
+{{log system}}
+

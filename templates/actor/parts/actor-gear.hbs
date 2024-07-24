@@ -1,0 +1,38 @@
+<div>
+  <h3 class="ncou-hacked-font">Gear</h3>
+  <ol class="items-list ncou-items-list">
+    {{#each gear as |item id|}}
+      {{#unless (eq system.tags "")}}
+        <li class="item gear-name flexrow" data-item-id="{{item._id}}">
+          <div class="item-name">
+            <a class="item-control item-edit" title="{{localize "DOCUMENT.Update" type="Gear"}}"><h4>{{item.name}}</h4></a>
+          </div>
+        </li>
+        <li class="gear-tags">
+          <i class="fa-solid fa-tags"></i> {{system.tags}}
+        </li>
+      {{else}}
+        <li class="item flexrow" data-item-id="{{item._id}}">
+          <div class="item-name">
+            <a class="item-control item-edit" title="{{localize "DOCUMENT.Update" type="Gear"}}"><h4>{{item.name}}</h4></a>
+          </div>
+        </li>
+      {{/unless}}
+    {{/each}}
+    <li class="flex-group-right">
+      <a class="item-control item-create" title="{{localize "DOCUMENT.Create" type="Gear"}}" data-type="gear">
+        <i class="fas fa-plus"></i>
+      </a>
+    </li>
+  </ol>
+</div>
+<div class="stash-section">
+  <h3 class="ncou-hacked-font">Stash</h3>
+  <div class="flexrow">
+    <div>&nbsp;
+      {{#each system.stash as |stashbox key|}}
+        <input class="ncou-check-cyber" type="checkbox" name="system.stash.{{key}}.value" value="{{stashbox.value}}" data-dtype="Boolean" {{checked stashbox.value}}/>&nbsp;
+      {{/each}}
+    </div>
+  </div>
+</div>

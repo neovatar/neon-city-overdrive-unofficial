@@ -1,0 +1,262 @@
+@font-face {
+  font-family: Hacked;
+  src: url(../assets/hacked/HACKED.ttf);
+}
+
+.ncou-hacked-font {
+  font-family: Hacked, sans-serif;
+}
+
+.ncou-font-big {
+  font-size: 2em;
+}
+
+.ncou-font-medium {
+  font-size: 1.2em;
+}
+
+.ncou-bg-shade-normal {
+  background: $ncou-bg-shade-normal;
+}
+
+.ncou-bg-shade-lightest {
+  background: $ncou-bg-shade-lightest;
+}
+
+.ncou-bg-shade-transparent {
+  background: $ncou-bg-shade-transparent;
+}
+
+.ncou-cyber {
+  position: relative;
+  // float: left;
+  border: none;
+  background: transparent;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  height: auto;
+  font-size: 15px;
+  line-height: 2em;
+  text-decoration: none;
+}
+
+.ncou-cyber::before {
+  content: 'X';
+  color: transparent;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0px 0em 0px 0px;
+  clip-path: polygon(calc(100% - 15px) 0, 100% 50%, 100% 100%, 0 100%, 0 0);
+  background-color: $ncou-bg-shade-normal;
+  pointer-events: none;
+}
+
+
+.ncou-input-cyber {
+  position: relative;
+  float: left;
+  input[type=text] {
+    border: none;
+    padding: 0px 0em 0em 5px;
+    background: transparent;
+    margin: 0px 0px 0px 0px;
+    height: auto;
+  }
+}
+
+.ncou-input-cyber::before {
+  content: 'X';
+  color: transparent;
+  position: absolute;
+  width: 100%;
+  padding: 5px 0em 0px 0px;
+  clip-path: polygon(calc(100% - 15px) 0, 100% 50%, 100% 100%, 0 100%, 0 0);
+  background-color: $ncou-bg-shade-normal;
+  pointer-events: none;
+}
+
+.ncou-input-cyber-small {
+  position: relative;
+  float: left;
+  input[type=text] {
+    border: none;
+    padding-left: 5px;
+    background: transparent;
+    margin: 0px 0px 0px 0px;
+    min-width: 3ch;
+    height: auto;
+  }
+}
+
+.ncou-input-cyber-small::before {
+    content: 'X';
+    color: transparent;
+    position: absolute;
+    width: 100%;
+    padding: 0px 0em 5px 0px;
+    clip-path: polygon(calc(100% - 7px) 0, 100% 25%, 100% 100%, 0 100%, 0 0);
+    background-color: $ncou-bg-shade-normal;
+    pointer-events: none;
+}
+
+.ncou-box-notop {
+  border-style: solid;
+  border-color: $ncou-bg-shade-normal;
+  border-width: 0px 1px 1px;
+  margin: 0px 0px 0px 0px;
+}
+
+.ncou-items-list {
+  ol {
+    list-style-type: none;
+  }
+
+  li {
+    list-style-type: none;
+    margin: 0px 10px 0px 0px;
+    padding: 5px 0px 5px 1ch;
+  }
+}
+
+.ncou-edge-list {
+  ol {
+    list-style-type: none;
+  }
+
+  li {
+    list-style-type: none;
+    margin: 0px 10px 0px 0px;
+    padding: 5px 0px 5px 1ch;
+  }
+
+  li::before {
+    content: " ";
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    background: url(../assets/dice-plus.svg) no-repeat;
+    background-size: contain;
+    margin-right: 0.5em;
+  }
+
+  li:last-child::before { 
+    content: none;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background: transparent;
+    background-size: contain;
+    margin-right: 0.5em;
+  }
+}
+
+.ncou-trauma-list {
+  ol {
+    list-style-type: none;
+  }
+
+  li {
+    list-style-type: none;
+    margin: 0px 10px 0px 0px;
+    padding: 5px 0px 5px 1ch;
+  }
+
+  li::before {
+    content: " ";
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    background: url(../assets/dice-minus.svg) no-repeat;
+    background-size: contain;
+    margin-right: 0.5em;
+  }
+
+  li:last-child::before { 
+    content: none;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background: transparent;
+    background-size: contain;
+    margin-right: 0.5em;
+  }
+}
+
+.ncou-flaw-list {
+  ol {
+    list-style-type: none;
+  }
+
+  li {
+    list-style-type: none;
+    margin: 0px 10px 0px 0px;
+    padding: 5px 0px 5px 1ch;
+  }
+
+  li::before {
+    content: " ";
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    background: url(../assets/dice-minus.svg) no-repeat;
+    background-size: contain;
+    margin-right: 0.5em;
+  }
+
+  li:last-child::before { 
+    content: none;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background: transparent;
+    background-size: contain;
+    margin-right: 0.5em;
+  }
+}
+
+.window-content {
+  background: url(../assets/ncou-pattern.webp) repeat;
+}
+
+.ncou-check-cyber {
+  width: $ncou-checkbox-size;
+  height: $ncou-checkbox-size;
+  border: 2px solid $ncou-checkbox-color;
+  border-radius: 3px;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  vertical-align: middle;
+  margin: 0;
+  cursor: pointer;
+}
+
+.ncou-check-cyber::before {
+  content: " ";
+  width: $ncou-checkbox-inner-size;
+  height: $ncou-checkbox-inner-size;
+  background-color: $ncou-checkbox-inner-color;
+  position: relative;
+  top: calc(($ncou-checkbox-size - $ncou-checkbox-inner-size) / 2 - 2px);
+  left: calc(($ncou-checkbox-size - $ncou-checkbox-inner-size) / 2 - 2px);
+  display: block;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: 120ms transform ease-in-out;
+  transition: 120ms transform ease-in-out;
+}
+
+.ncou-check-cyber:checked:before {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.ncou-spacer {
+  padding: 0.5em 0px 0px 0px;
+}
+
+.ncou-trademark-header {
+  padding: 0px 0em 0em 5px;
+}
+

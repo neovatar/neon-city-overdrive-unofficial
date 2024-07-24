@@ -1,0 +1,21 @@
+<div class="condition-section">
+  <h3 class="ncou-hacked-font">Conditions</h3>
+  {{#if (eq actor.type "character")}}
+  <div class="grid grid-3col">
+  {{else}}
+  <div class="flexcol">
+  {{/if}}
+    {{#each system.conditions as |condition key|}}
+      {{#if (eq condition.modify false)}}
+        <div>
+          <input class="ncou-check-cyber" type="checkbox" name="system.conditions.{{key}}.active" value="{{condition.active}}" data-dtype="Boolean" {{checked condition.active}}/> {{condition.name}}
+        </div>
+      {{else}}
+        <div>
+          <input class="ncou-check-cyber" type="checkbox" name="system.conditions.{{key}}.active" value="{{condition.active}}" data-dtype="Boolean" {{checked condition.active}}/> <input class="ncou-bg-shade-transparent"
+          name="system.conditions.{{key}}.name" type="text" value="{{condition.name}}"/>
+        </div>
+      {{/if}}
+    {{/each}}
+  </div>
+</div>

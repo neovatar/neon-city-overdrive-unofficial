@@ -1,0 +1,22 @@
+{
+  "name": "neon-city-overdrive-unofficial",
+  "version": "2.0.0",
+  "description": "CSS compiler for the ncou system",
+  "scripts": {
+    "build": "npx sass src/scss/neon-city-overdrive-unofficial.scss css/neon-city-overdrive-unofficial.css --style=expanded --no-source-map",
+    "watch": "npx sass src/scss/neon-city-overdrive-unofficial.scss css/neon-city-overdrive-unofficial.css --style=expanded --source-map --watch"
+  },
+  "browserslist": [
+    "last 3 versions"
+  ],
+  "author": "Asacolips",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "sass": "^1.53.0"
+  },
+  "volta": {
+    "node": "20.11.1",
+    "npm": "10.8.2"
+  }
+}
