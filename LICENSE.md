@@ -1,6 +1,6 @@
 # Licenses used in this system
 
-- [Neon City Overdrive (unofficial) game system (MIT License)](#neon-city-overdrive-unofficial-system)
+- [Neon City Overdrive Unofficial game system (MIT License)](#neon-city-overdrive-unofficial-system)
 - [Neon City Overdrive by Natan Russell](#neon-city-overdrive-by-nathan-russell)
 - [Foundry VTT boilerplate system (MIT License)](#foundry-vtt-boilerplate-system)
 - [HACKED Font by David Libeau](#hacked-font-by-david-libeau)
