@@ -23,7 +23,7 @@
   "version": "0.1.0",
   "compatibility": {
     "minimum": "11.315",
-    "verified": "11.315"
+    "verified": "12.330"
   },
   "esmodules": ["module/neon-city-overdrive-unofficial.mjs"],
   "styles": ["css/neon-city-overdrive-unofficial.css"],
