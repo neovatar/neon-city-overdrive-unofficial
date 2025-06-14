@@ -37,7 +37,7 @@
   "packs": [],
   "packFolders": [],
   "socket": false,
-  "manifest": "https://raw.githubusercontent.com/neovatar/neon-city-overdrive-unofficial/snapshot-0.2.0/system.json",
+  "manifest": "https://github.com/neovatar/neon-city-overdrive-unofficial/releases/download/snapshot-0.2.0/system.json",
   "download": "https://github.com/neovatar/neon-city-overdrive-unofficial/releases/download/snapshot-0.2.0/ncou-snapshot-0.2.0.zip",
   "background": "systems/neon-city-overdrive-unofficial/assets/ncou-setup.webp",
   "gridDistance": 5,
