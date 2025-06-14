@@ -62,8 +62,12 @@
 
     {{!-- Biography Tab --}}
     <div class="tab biography" data-group="primary" data-tab="biography">
-      {{!-- If you want TinyMCE editors to output inline rolls when rendered, you need to pass the actor's roll data to the rollData property. --}}
-      {{editor system.biography target="system.biography" rollData=rollData button=true owner=owner editable=editable}}
+      {{#if editable}}
+        <prose-mirror name="system.biography" data-document-uuid="{{item.uuid}}" value="{{system.biography}}" collaborate="true" toggled="true">
+          {{{system.biography}}}
+        </prose-mirror>
+      {{else}}  {{{system.biography}}}
+      {{/if}}
     </div>
 
   </section>

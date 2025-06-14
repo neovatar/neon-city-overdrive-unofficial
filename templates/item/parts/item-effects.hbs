@@ -1,7 +1,7 @@
 <ol class="items-list effects-list">
   {{#each effects as |section sid|}}
     <li class="items-header flexrow" data-effect-type="{{section.type}}">
-      <h3 class="item-name effect-name flexrow">{{localize section.label}}</h3>
+      <h3 class="item-name effect-name flexrow ncou-h3">{{localize section.label}}</h3>
       <div class="effect-source">{{localize "NCOU.Effect.Source"}}</div>
       <div class="effect-source">{{localize "EFFECT.TabDuration"}}</div>
       <div class="item-controls effect-controls flexrow">
@@ -28,7 +28,7 @@
             <i class="fas fa-edit"></i>
           </a>
           <a class="effect-control" data-action="delete" title="{{localize 'DOCUMENT.Delete' type="Effect"}}">
-            <i class="fas fa-trash"></i>
+            <i class="fas fa-trash ncou-text-primary"></i>
           </a>
         </div>
       </li>

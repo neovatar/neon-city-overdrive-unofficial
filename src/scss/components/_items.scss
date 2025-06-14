@@ -30,7 +30,7 @@
   padding: 0;
   overflow-y: auto;
   scrollbar-width: thin;
-  color: $c-dark;
+  color: var(--ncou-text-primary);
 
   // Child lists
   .item-list {
@@ -73,11 +73,11 @@
     margin: 0px 0px 0px 0px;
     //padding: 5px 0px 5px 1ch;
     //padding: 0 2px; // to align with the header border
-    border-bottom: 1px solid $ncou-bg-shade-lightest;
+    border-bottom: 1px solid var(--bg-shade-lightest);
     &:last-child { border-bottom: none; }
     //&:first-child { padding: 10px 0px 5px 1ch; }
     .item-name {
-      color: $c-dark;
+      color: var(--color-dark);
       .item-image {
         flex: 0 0 30px;
         height: 30px;
@@ -140,6 +140,7 @@
 
 .drive-section {
   margin-bottom: 1em;
+  color: var(--ncou-text-primary);
 }
 
 .edge-list {
@@ -156,6 +157,7 @@
     font-size: var(--font-size-14);
     border: none;
     padding: 0;
+    color: var(--ncou-text-primary);
   }
 }
 
@@ -165,7 +167,7 @@
 
 .gear-tags {
   font-size: 0.9em;
-  border-bottom: 1px solid $ncou-bg-shade-lightest;
+  border-bottom: 1px solid var(--bg-shade-lightest);
   padding: 0 0 5px 25px !important;
   margin-bottom: 0.555em;
 }
@@ -175,6 +177,7 @@
     font-size: var(--font-size-14);
     border: none;
     padding: 0;
+    color: var(--ncou-text-primary);
   }
 }
 
