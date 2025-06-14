@@ -63,7 +63,7 @@
     {{!-- Biography Tab --}}
     <div class="tab biography" data-group="primary" data-tab="biography">
       {{#if editable}}
-        <prose-mirror name="system.biography" data-document-uuid="{{item.uuid}}" value="{{system.biography}}" collaborate="true" toggled="true">
+        <prose-mirror name="system.biography" data-document-uuid="{{actor.uuid}}" value="{{system.biography}}" collaborate="true" toggled="true">
           {{{system.biography}}}
         </prose-mirror>
       {{else}}  {{{system.biography}}}
