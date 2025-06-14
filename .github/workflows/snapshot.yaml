@@ -81,16 +81,6 @@ jobs:
       # Create a zip file with all files required by the module to add to the release
       - run: zip ${{ env.ZIP_NAME }} -r assets css lang lib module packs templates LICENSE.md README.md CHANGELOG.md system.json template.json
 
-      # Fetch the body from the release
-      - name: Fetch Release Body
-        id: release
-        uses: cardinalby/git-get-release-action@v1
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        with:
-          tag: ${{ env.TAG_NAME }}
-          doNotFailIfNotFound: true
-
       # Create a release for this specific version
       - name: Update Release with Files
         id: create_version_release
@@ -106,6 +96,4 @@ jobs:
           artifacts: "./system.json, ./${{ env.ZIP_NAME }}"
           tag: ${{ env.TAG_NAME }}
           body: |
-            ${{ steps.release.outputs.body }}
-
             **Installation:** To manually install this release, please use the following manifest URL: ${{ env.RELEASE_INSTALL_URL }}
