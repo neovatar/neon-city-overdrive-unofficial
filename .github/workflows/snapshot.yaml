@@ -90,7 +90,7 @@ jobs:
           name: ${{ env.TAG_NAME }}
           draft: false
           prerelease: true
-          omitDraftDuringUpdate: true
+          omitDraftDuringUpdate: false
           omitPrereleaseDuringUpdate: true
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "./system.json, ./${{ env.ZIP_NAME }}"
