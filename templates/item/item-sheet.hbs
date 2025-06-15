@@ -21,9 +21,9 @@
     <div class="tab" data-group="primary" data-tab="description">
       {{#if editable}}
         <prose-mirror name="system.description" data-document-uuid="{{item.uuid}}" value="{{system.description}}" collaborate="true" toggled="true">
-          {{{system.description}}}
+          {{{enrichedDescription}}}
         </prose-mirror>
-      {{else}}  {{{system.description}}}
+      {{else}}  {{{enrichedDescription}}}
       {{/if}}
     </div>
 
