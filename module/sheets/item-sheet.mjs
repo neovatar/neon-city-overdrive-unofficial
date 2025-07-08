@@ -38,15 +38,24 @@ export class ncouItemSheet extends ItemSheet {
   /* -------------------------------------------- */
 
   /** @override */
-  getData() {
+  async getData() {
     // Retrieve base data structure.
     const context = super.getData();
 
     // Use a safe clone of the item data for further operations.
     const itemData = context.data;
-
-    // Retrieve the roll data for TinyMCE editors.
-    context.rollData = this.item.getRollData();
+    
+    context.enrichedDescription = await TextEditor.enrichHTML(
+      this.item.system.description,
+      {
+        // Whether to show secret blocks in the finished html
+        secrets: this.document.isOwner,
+        // Data to fill in for inline rolls
+        rollData: this.item.getRollData(),
+        // Relative UUID resolution
+        relativeTo: this.item,
+      }
+    );
 
     // Add the item's data to context.data for easier access, as well as flags.
     context.system = itemData.system;

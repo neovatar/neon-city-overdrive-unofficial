@@ -8,11 +8,11 @@
   </header>
 
   {{!-- Sheet Tab Navigation --}}
-  <nav class="sheet-tabs tabs" data-group="primary">
+  <nav class="sheet-tabs tabs ncou-text-primary" data-group="primary">
     <a class="item" data-tab="description">Description</a>
     <a class="item" data-tab="attributes">Attributes</a>
     <a class="item item-delete" title="{{localize "DOCUMENT.Delete" type="Edge"}}">
-      <i class="fas fa-trash"></i>
+      <i class="fas fa-trash ncou-text-primary"></i>
     </a>
   </nav>
 
@@ -21,7 +21,12 @@
 
     {{!-- Description Tab --}}
     <div class="tab" data-group="primary" data-tab="description">
-      {{editor system.description target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+      {{#if editable}}
+        <prose-mirror name="system.description" data-document-uuid="{{item.uuid}}" value="{{system.description}}" collaborate="true" toggled="true">
+          {{{enrichedDescription}}}
+        </prose-mirror>
+      {{else}}  {{{enrichedDescription}}}
+      {{/if}}
     </div>
 
     {{!-- Attributes Tab --}}

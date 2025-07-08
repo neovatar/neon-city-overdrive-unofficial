@@ -47,10 +47,12 @@
 
 .tox {
   .tox-editor-container {
-    background: $c-white;
+    background: var(--color-background);
+    color: var(--ncou-text-primary);
   }
 
   .tox-edit-area {
     padding: 0 8px;
+    color: var(--ncou-text-primary);
   }
 }

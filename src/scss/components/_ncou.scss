@@ -5,6 +5,15 @@
 
 .ncou-hacked-font {
   font-family: Hacked, sans-serif;
+  color: var(--ncou-text-primary);
+}
+
+.ncou-h3 {
+  border-bottom: 1px solid var(--ncou-text-primary);  
+}
+
+.ncou-text-primary {
+  color: var(--ncou-text-primary);
 }
 
 .ncou-font-big {
@@ -16,15 +25,15 @@
 }
 
 .ncou-bg-shade-normal {
-  background: $ncou-bg-shade-normal;
+  background: var(--bg-shade-normal);
 }
 
 .ncou-bg-shade-lightest {
-  background: $ncou-bg-shade-lightest;
+  background: var(--bg-shade-lightest);
 }
 
 .ncou-bg-shade-transparent {
-  background: $ncou-bg-shade-transparent;
+  background: var(--bg-shade-transparent);
 }
 
 .ncou-cyber {
@@ -48,7 +57,7 @@
   height: 100%;
   padding: 0px 0em 0px 0px;
   clip-path: polygon(calc(100% - 15px) 0, 100% 50%, 100% 100%, 0 100%, 0 0);
-  background-color: $ncou-bg-shade-normal;
+  background-color: var(--bg-shade-normal);
   pointer-events: none;
 }
 
@@ -62,6 +71,7 @@
     background: transparent;
     margin: 0px 0px 0px 0px;
     height: auto;
+    color: var(--ncou-text-primary);
   }
 }
 
@@ -72,7 +82,7 @@
   width: 100%;
   padding: 5px 0em 0px 0px;
   clip-path: polygon(calc(100% - 15px) 0, 100% 50%, 100% 100%, 0 100%, 0 0);
-  background-color: $ncou-bg-shade-normal;
+  background-color: var(--bg-shade-normal);
   pointer-events: none;
 }
 
@@ -86,6 +96,7 @@
     margin: 0px 0px 0px 0px;
     min-width: 3ch;
     height: auto;
+    color: var(--ncou-text-primary);
   }
 }
 
@@ -96,13 +107,13 @@
     width: 100%;
     padding: 0px 0em 5px 0px;
     clip-path: polygon(calc(100% - 7px) 0, 100% 25%, 100% 100%, 0 100%, 0 0);
-    background-color: $ncou-bg-shade-normal;
+    background-color: var(--bg-shade-normal);
     pointer-events: none;
 }
 
 .ncou-box-notop {
   border-style: solid;
-  border-color: $ncou-bg-shade-normal;
+  border-color: var(--bg-shade-normal);
   border-width: 0px 1px 1px;
   margin: 0px 0px 0px 0px;
 }
@@ -135,7 +146,7 @@
     display: inline-block;
     width: 1.2em;
     height: 1.2em;
-    background: url(../assets/dice-plus.svg) no-repeat;
+    background: var(--dice-plus) no-repeat;
     background-size: contain;
     margin-right: 0.5em;
   }
@@ -167,7 +178,7 @@
     display: inline-block;
     width: 1.2em;
     height: 1.2em;
-    background: url(../assets/dice-minus.svg) no-repeat;
+    background: var(--dice-minus) no-repeat;
     background-size: contain;
     margin-right: 0.5em;
   }
@@ -199,7 +210,7 @@
     display: inline-block;
     width: 1.2em;
     height: 1.2em;
-    background: url(../assets/dice-minus.svg) no-repeat;
+    background: var(--dice-minus) no-repeat;
     background-size: contain;
     margin-right: 0.5em;
   }
@@ -216,7 +227,11 @@
 }
 
 .window-content {
-  background: url(../assets/ncou-pattern.webp) repeat;
+  background: var(--bg-image) repeat;
+}
+
+.ncou-check {
+  color: var(--ncou-text-primary);
 }
 
 .ncou-check-cyber {

@@ -1,5 +1,5 @@
 <div class="condition-section">
-  <h3 class="ncou-hacked-font">Conditions</h3>
+  <h3 class="ncou-hacked-font ncou-h3">Conditions</h3>
   {{#if (eq actor.type "character")}}
   <div class="grid grid-3col">
   {{else}}
@@ -7,11 +7,11 @@
   {{/if}}
     {{#each system.conditions as |condition key|}}
       {{#if (eq condition.modify false)}}
-        <div>
+        <div class="ncou-check">
           <input class="ncou-check-cyber" type="checkbox" name="system.conditions.{{key}}.active" value="{{condition.active}}" data-dtype="Boolean" {{checked condition.active}}/> {{condition.name}}
         </div>
       {{else}}
-        <div>
+        <div class="ncou-check">
           <input class="ncou-check-cyber" type="checkbox" name="system.conditions.{{key}}.active" value="{{condition.active}}" data-dtype="Boolean" {{checked condition.active}}/> <input class="ncou-bg-shade-transparent"
           name="system.conditions.{{key}}.name" type="text" value="{{condition.name}}"/>
         </div>
