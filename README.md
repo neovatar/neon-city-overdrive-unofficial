@@ -7,7 +7,7 @@
 
 This game system for Foundry Virtual Tabletop provides character sheet and game system support for the [Neon City Overdrive RPG by Nathan Russell](https://www.perilplanet.com/neon-city-overdrive/). This is an unofficial game system and not affiliated with Nathan Russell or Peril Planet.
 
-This system provides character sheet support for characters and NPCs. For dice rolling you can install the [FUx Dice Roller](https://github.com/Anderware/Foundry-Vtt-Sandbox-Macros/tree/main/Modules/FUx-Dice-Roller) which has support for "Neon City Overdrive/Action! Tales" type rolls.
+This system provides character sheet support for characters and NPCs. For dice rolling you can install the [FUx Dice Roller](https://github.com/neovatar/FUx-Dice-Roller) which has support for "Neon City Overdrive/Action! Tales" type rolls.
 
 ![Character sheet sample](sample/character-sheet.webp)
 ![NPC sheet sample](sample/npc-sheet.webp)
