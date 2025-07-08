@@ -30,9 +30,9 @@ jobs:
         run: |
           TAG=${GITHUB_REF/refs\/tags\//}
           echo "TAG_NAME=$TAG" >> $GITHUB_ENV
-          echo "ZIP_NAME=ncou-$TAG.zip" >> $GITHUB_ENV
+          echo "ZIP_NAME=ncou.zip" >> $GITHUB_ENV
           echo "RELEASE_DOWNLOAD_URL=https://github.com/${{github.repository}}/releases/download/$TAG/ncou-$TAG.zip" >> $GITHUB_ENV
-          echo "RELEASE_INSTALL_URL=https://github.com/${{github.repository}}/releases/download/$TAG/system.json" >> $GITHUB_ENV
+          echo "RELEASE_INSTALL_URL=https://github.com/${{github.repository}}/releases/latest/download/system.json" >> $GITHUB_ENV
 
       # Run some tests to make sure our `system.json` is correct
       # Exit before setting up node if not
@@ -99,7 +99,7 @@ jobs:
           allowUpdates: false # Set this to false if you want to prevent updating existing releases
           name: ${{ env.TAG_NAME }}
           draft: false
-          prerelease: true
+          prerelease: false
           omitDraftDuringUpdate: true
           omitPrereleaseDuringUpdate: true
           token: ${{ secrets.GITHUB_TOKEN }}
