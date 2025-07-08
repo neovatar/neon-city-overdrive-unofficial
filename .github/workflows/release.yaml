@@ -31,7 +31,7 @@ jobs:
           TAG=${GITHUB_REF/refs\/tags\//}
           echo "TAG_NAME=$TAG" >> $GITHUB_ENV
           echo "ZIP_NAME=ncou.zip" >> $GITHUB_ENV
-          echo "RELEASE_DOWNLOAD_URL=https://github.com/${{github.repository}}/releases/download/$TAG/ncou-$TAG.zip" >> $GITHUB_ENV
+          echo "RELEASE_DOWNLOAD_URL=https://github.com/${{github.repository}}/releases/download/$TAG/ncou.zip" >> $GITHUB_ENV
           echo "RELEASE_INSTALL_URL=https://github.com/${{github.repository}}/releases/latest/download/system.json" >> $GITHUB_ENV
 
       # Run some tests to make sure our `system.json` is correct
