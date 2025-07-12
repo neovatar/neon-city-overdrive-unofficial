@@ -1,7 +1,8 @@
 ![Neon City Overdrive Unofficial Banner](assets/ncou-setup.webp)
 
-![GitHub Release](https://img.shields.io/github/v/release/neovatar/neon-city-overdrive-unofficial?style=for-the-badge&label=Latest%20release&color=%23ff6400)
-![GitHub Downloads (latest release)](https://img.shields.io/github/downloads/neovatar/neon-city-overdrive-unofficial/latest/ncou.zip?style=for-the-badge)
+![Latest Release](https://img.shields.io/github/v/release/neovatar/neon-city-overdrive-unofficial?style=for-the-badge&label=Latest%20release&color=%23ff6400)
+![Downloads (release-0.5.0)](https://img.shields.io/github/downloads/neovatar/neon-city-overdrive-unofficial/release-0.2.0/ncou.zip?style=for-the-badge&label=Downloads%20%28release-0.2.0%29)
+![Downloads (all releases)](https://img.shields.io/github/downloads/neovatar/neon-city-overdrive-unofficial/ncou.zip?style=for-the-badge&label=Downloads%20%28all%20releases%29)
 
 # Foundry VTT: Neon City Overdrive unofficial game system
 
