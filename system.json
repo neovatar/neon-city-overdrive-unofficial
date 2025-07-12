@@ -20,7 +20,7 @@
       "thumbnail": "systems/neon-city-overdrive-unofficial/assets/ncou-setup.webp"
     }
   ],
-  "version": "0.2.0",
+  "version": "0.3.0",
   "compatibility": {
     "minimum": "11.315",
     "verified": "12.343"
