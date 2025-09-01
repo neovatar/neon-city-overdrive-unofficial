@@ -5,6 +5,12 @@
 ### Added
 - Slider that locks sheet to prevent edits
 
+### Fixed
+- Fix edge font size
+
+### Changed
+- Update README and samples
+
 ## 0.2.0
 
 ### Added
