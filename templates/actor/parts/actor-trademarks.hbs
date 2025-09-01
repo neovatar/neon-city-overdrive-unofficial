@@ -6,9 +6,13 @@
          <div class="trademark-section">
           <li class="item flexrow" data-trademarkid="{{trademark._id}}" data-item-id="{{trademark._id}}">
             <div class="ncou-cyber">
-              <a class="item-control item-edit" title="{{localize "DOCUMENT.Modify" type="Trademark"}}">
+              {{#if @root.system.sheet-unlocked}}
+                <a class="item-control item-edit" title="{{localize "DOCUMENT.Modify" type="Trademark"}}">
+                  <div class="ncou-trademark-header">{{trademark.name}}</div>
+                </a>
+              {{else}}
                 <div class="ncou-trademark-header">{{trademark.name}}</div>
-              </a>
+              {{/if}}
             </div>
           </li>
           <li>
@@ -18,27 +22,35 @@
                 {{#each edges as |item id|}}
                   <li class="item edge-name flexrow" data-trademarkid="{{trademark._id}}" data-item-id="{{item._id}}">
                     <div class="flexrow">
-                      <a class="item-control item-edit" title="{{localize "DOCUMENT.Create" type="Edge"}}">
+                      {{#if @root.system.sheet-unlocked}}
+                        <a class="item-control item-edit" title="{{localize "DOCUMENT.Create" type="Edge"}}">
+                          <div>{{item.name}}</div>
+                        </a>
+                      {{else}}
                         <div>{{item.name}}</div>
-                      </a>
+                      {{/if}}
                     </div>
                   </li>
                 {{/each}}
               {{/if}}
             {{/each}}
-              <li class="flex-group-right" data-trademarkid="{{trademark._id}}">
+            {{#if @root.system.sheet-unlocked}}
+              <li class="flex-group-right item-create" data-trademarkid="{{trademark._id}}">
                 <a class="item-control item-create" title="{{localize "DOCUMENT.Create" type="Edge"}}" data-type="edge" data-trademarkid="{{trademark._id}}">
                   <i class="fas fa-plus"></i>
                 </a>
               </li>
+            {{/if}}
             </ol>
           </li>
         </div>
       {{/each}}
       <li class="flex-group-left">
+        {{#if @root.system.sheet-unlocked}}
           <a class="item-control item-create" title="{{localize "DOCUMENT.Create" type="Trademark"}}" data-type="trademark">
             <i class="fas fa-plus"></i>
           </a>
+        {{/if}}
       </li>
     </ol>
   </div>

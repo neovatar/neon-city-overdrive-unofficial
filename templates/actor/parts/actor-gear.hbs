@@ -5,7 +5,11 @@
       {{#unless (eq system.tags "")}}
         <li class="item gear-name flexrow" data-item-id="{{item._id}}">
           <div class="item-name">
-            <a class="item-control item-edit" title="{{localize "DOCUMENT.Update" type="Gear"}}"><h4>{{item.name}}</h4></a>
+            {{#if @root.system.sheet-unlocked}}
+              <a class="item-control item-edit" title="{{localize "DOCUMENT.Update" type="Gear"}}"><h4>{{item.name}}</h4></a>
+            {{else}}
+              <h4>{{item.name}}</h4>
+            {{/if}}
           </div>
         </li>
         <li class="gear-tags">
@@ -14,15 +18,21 @@
       {{else}}
         <li class="item flexrow" data-item-id="{{item._id}}">
           <div class="item-name">
-            <a class="item-control item-edit" title="{{localize "DOCUMENT.Update" type="Gear"}}"><h4>{{item.name}}</h4></a>
+            {{#if @root.system.sheet-unlocked}}
+              <a class="item-control item-edit" title="{{localize "DOCUMENT.Update" type="Gear"}}"><h4>{{item.name}}</h4></a>
+            {{else}}
+              <h4>{{item.name}}</h4>
+            {{/if}}
           </div>
         </li>
       {{/unless}}
     {{/each}}
     <li class="flex-group-right">
-      <a class="item-control item-create" title="{{localize "DOCUMENT.Create" type="Gear"}}" data-type="gear">
-        <i class="fas fa-plus"></i>
-      </a>
+      {{#if @root.system.sheet-unlocked}}
+        <a class="item-control item-create" title="{{localize "DOCUMENT.Create" type="Gear"}}" data-type="gear">
+          <i class="fas fa-plus"></i>
+        </a>
+      {{/if}}
     </li>
   </ol>
 </div>

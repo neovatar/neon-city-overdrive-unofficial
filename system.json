@@ -20,7 +20,7 @@
       "thumbnail": "systems/neon-city-overdrive-unofficial/assets/ncou-setup.webp"
     }
   ],
-  "version": "0.2.0",
+  "version": "0.3.0",
   "compatibility": {
     "minimum": "11.315",
     "verified": "12.343"
@@ -37,8 +37,8 @@
   "packs": [],
   "packFolders": [],
   "socket": false,
-  "manifest": "https://github.com/neovatar/neon-city-overdrive-unofficial/releases/latest/download/system.json",
-  "download": "https://github.com/neovatar/neon-city-overdrive-unofficial/releases/download/release-0.2.0/ncou.zip",
+  "manifest": "https://github.com/neovatar/neon-city-overdrive-unofficial/releases/download/snapshot-0.3.0/system.json",
+  "download": "https://github.com/neovatar/neon-city-overdrive-unofficial/releases/download/snapshot-0.3.0/ncou.zip",
   "background": "systems/neon-city-overdrive-unofficial/assets/ncou-setup.webp",
   "grid": {
     "Distance": 5,

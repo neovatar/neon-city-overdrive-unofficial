@@ -18,6 +18,8 @@
   --dice-plus-dark: url('../assets/dice-plus-dark.svg');
   --dice-minus-light: url('../assets/dice-minus-light.svg');
   --dice-minus-dark: url('../assets/dice-minus-dark.svg');
+  --lock-dark: url('../assets/padlock-dark.svg');
+  --lock-light: url('../assets/padlock-light.svg');
 }
 
 .theme-dark {
@@ -29,6 +31,8 @@
   --dice-plus: var(--dice-plus-dark);
   --dice-minus: var(--dice-minus-dark);
   --color-checkbox: var(--color-tan-lighter);
+  --ncou-text-inverted: var(--color-tan-dark);
+  --lock-icon: var(--lock-light);
 
   prose-mirror {
 	  --color-control-bg: #transparent;
@@ -51,10 +55,12 @@
   --bg-shade-normal: var(--bg-shade-normal-light);
   --bg-shade-lightest: var(--bg-shade-lightest-light);
   --bg-shade-transparent: var(--bg-shade-transparent-light);
-  --ncou-text-primary: var(--color-tan-dark);
+  --ncou-text-primary: var(--color-tan);
   --dice-plus: var(--dice-plus-light);
   --dice-minus: var(--dice-minus-light);
-  --color-checkbox: var(--color-tan-dark);
+  --color-checkbox: var(--color-tan);
+  --ncou-text-inverted: var(--color-tan-lighter);
+  --lock-icon: var(--lock-dark);
 
   prose-mirror {
 	  --color-control-bg: #transparent;

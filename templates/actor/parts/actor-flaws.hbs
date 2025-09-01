@@ -4,15 +4,21 @@
     {{#each flaws as |item id|}}
       <li class="item flexrow" data-item-id="{{item._id}}">
         <div class="item-name">
-          <a class="item-control item-edit" title="{{localize "DOCUMENT.Update" type="Flaw"}}"><h4>{{item.name}}</h4></a>
+          {{#if @root.system.sheet-unlocked}}
+            <a class="item-control item-edit" title="{{localize "DOCUMENT.Update" type="Flaw"}}"><h4>{{item.name}}</h4></a>
+          {{else}}
+            <h4>{{item.name}}</h4>
+          {{/if}}
         </div>
       </li>
     {{/each}}
     <li>
       <div class="flex-group-right">
-        <a class="item-control item-create" title="{{localize "DOCUMENT.Create" type="Flaw"}}" data-type="flaw">
-          <i class="fas fa-plus"></i>
-        </a>
+        {{#if @root.system.sheet-unlocked}}
+          <a class="item-control item-create" title="{{localize "DOCUMENT.Create" type="Flaw"}}" data-type="flaw">
+            <i class="fas fa-plus"></i>
+          </a>
+        {{/if}}
       </div>
     </li>
   </ol>

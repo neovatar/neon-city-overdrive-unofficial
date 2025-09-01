@@ -151,7 +151,7 @@
     margin-right: 0.5em;
   }
 
-  li:last-child::before { 
+  li.item-create:last-child::before { 
     content: none;
     display: inline-block;
     width: 1em;
@@ -265,6 +265,58 @@
 .ncou-check-cyber:checked:before {
   -webkit-transform: scale(1);
   transform: scale(1);
+}
+
+ /* The switch - the box around the slider */
+.ncou-switch {
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+  max-width: 30px;
+}
+
+/* Hide default HTML checkbox */
+.ncou-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.ncou-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--bg-shade-lightest);
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.ncou-slider:before {
+  position: absolute;
+  content: var(--lock-icon) / "locked";
+  height: 16px;
+  width: 16px;
+  left: 1px;
+  bottom: 1px;
+  background-color: var(--bg-shade-normal);
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .ncou-slider:before {
+  content: "";
+  -webkit-transform: translateX(12px);
+  -ms-transform: translateX(12px);
+  transform: translateX(12px);
+  background-color: var(--ncou-text-primary);
 }
 
 .ncou-spacer {

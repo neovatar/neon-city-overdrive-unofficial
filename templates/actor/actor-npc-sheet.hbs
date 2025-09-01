@@ -10,6 +10,11 @@
         </div>
       </div>
       <div class="resources grid grid-12col">
+        <div class="resource flexcol grid-span-1">
+          <div class="ability flexrow flex-group-left">
+            <label class="ncou-switch"><input type="checkbox" name="system.sheet-unlocked" value="{{system.sheet-unlocked}}" data-dtype="Boolean" {{checked system.sheet-unlocked}}/><span class="ncou-slider"></span></label>
+          </div>
+        </div>
         <div class="resource flexcol flex-left grid-span-3">
           <div class="ability flexrow flex-left flex-group-left">
             <div class="resource-content flexrow flex-group-center">
@@ -29,7 +34,7 @@
             <label class="ncou-hacked-font ncou-font-medium">Drive</label>
           </div>
         </div>
-        <div class="resource flexcol flex-right grid-span-8">
+        <div class="resource flexcol flex-right grid-span-7">
           <div class="ncou-input-cyber-small">
             <input type="text" name="system.drive.description" value="{{system.drive.description}}"/>
           </div>

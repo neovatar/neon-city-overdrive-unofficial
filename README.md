@@ -10,10 +10,14 @@ This game system for Foundry Virtual Tabletop provides character sheet and game 
 
 This system provides character sheet support for characters and NPCs. For dice rolling you can install the [FUx Dice Roller](https://github.com/neovatar/FUx-Dice-Roller) which has support for "Neon City Overdrive/Action! Tales" type rolls.
 
-![Character sheet sample](sample/character-sheet.webp)
-![NPC sheet sample](sample/npc-sheet.webp)
-
 The software component of this system is distributed under the MIT license. For a complete list of licenses for the included components, please read [LICENSE.md](LICENSE.md).
+
+## Sheet samples
+
+![Sheet sample light mode](sample/sheets-light.webp)
+![Sheet sample light mode](sample/sheets-dark.webp)
+
+You can lock a sheet to prevent accidental edits with the lock slider next to the character image.
 
 ## Installation Instructions
 
