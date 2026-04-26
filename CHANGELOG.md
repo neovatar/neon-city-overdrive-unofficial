@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 13.0.2
+
+### Fixed
+- manifest location now points to latest release, so updates via Foundry work again
+
 ## 13.0.1
 
 ### Fixed
