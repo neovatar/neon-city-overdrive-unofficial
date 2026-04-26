@@ -1,20 +1,34 @@
 <div>
   <h3 class="ncou-hacked-font ncou-h3">Traumas</h3>
   <ol class="items-list ncou-items-list ncou-trauma-list">
-    {{#each traumas as |item id|}}
-      <li class="item flexrow" data-item-id="{{item._id}}">
+    {{#each traumas as |trauma|}}
+      <li class="item flexrow draggable" data-item-id="{{trauma._id}}" data-document-class="Item" data-type="trauma">
         <div class="item-name">
-          {{#if @root.system.sheet-unlocked}}
-            <a class="item-control item-edit" title="{{localize "DOCUMENT.Update" type="Trauma"}}"><h4>{{item.name}}</h4></a>
+          {{#if @root.system.sheet_unlocked}}
+            <a
+              class="item-control item-edit"
+              data-tooltip='{{localize "DOCUMENT.Update" type='Trauma'}}'
+              data-action='viewDoc'
+              data-document-class='Item'
+              data-type="trauma"
+            >
+              <div>{{trauma.name}}</div>
+            </a>
           {{else}}
-            <h4>{{item.name}}</h4>
+            <div>{{trauma.name}}</div>
           {{/if}}
         </div>
       </li>
     {{/each}}
-    <li class="flex-group-right">
-      {{#if @root.system.sheet-unlocked}}
-        <a class="item-control item-create" title="{{localize "DOCUMENT.Create" type="Trauma"}}" data-type="trauma">
+    <li class="flex-group-right item-create">
+      {{#if @root.system.sheet_unlocked}}
+        <a
+          class="item-control item-create"
+          data-tooltip="{{localize "DOCUMENT.Create" type="Trauma"}}"
+          data-action='createDoc'
+          data-document-class='Item'
+          data-type="trauma"
+        >
           <i class="fas fa-plus"></i>
         </a>
       {{/if}}

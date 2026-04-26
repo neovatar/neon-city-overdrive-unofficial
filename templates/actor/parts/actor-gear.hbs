@@ -1,14 +1,20 @@
 <div>
   <h3 class="ncou-hacked-font ncou-h3">Gear</h3>
   <ol class="items-list ncou-items-list">
-    {{#each gear as |item id|}}
+    {{#each gear as |gear id|}}
       {{#unless (eq system.tags "")}}
-        <li class="item gear-name flexrow" data-item-id="{{item._id}}">
+        <li class="item flexrow draggable" data-item-id="{{gear._id}}" data-document-class="Item" data-type="gear">
           <div class="item-name">
-            {{#if @root.system.sheet-unlocked}}
-              <a class="item-control item-edit" title="{{localize "DOCUMENT.Update" type="Gear"}}"><h4>{{item.name}}</h4></a>
+          {{#if @root.system.sheet_unlocked}}
+              <a
+                class="item-control item-edit"
+                data-tooltip='{{localize "DOCUMENT.Update" type='Gear'}}'
+                data-action='viewDoc'
+                data-document-class='Item'
+                data-type="gear"
+              >{{gear.name}}</a>
             {{else}}
-              <h4>{{item.name}}</h4>
+              <div>{{gear.name}}</div>
             {{/if}}
           </div>
         </li>
@@ -16,20 +22,32 @@
           <i class="fa-solid fa-tags"></i> {{system.tags}}
         </li>
       {{else}}
-        <li class="item flexrow" data-item-id="{{item._id}}">
+        <li class="item flexrow draggable" data-item-id="{{gear._id}}" data-document-class="Item" data-type="gear">
           <div class="item-name">
-            {{#if @root.system.sheet-unlocked}}
-              <a class="item-control item-edit" title="{{localize "DOCUMENT.Update" type="Gear"}}"><h4>{{item.name}}</h4></a>
+            {{#if @root.system.sheet_unlocked}}
+              <a
+                class="item-control item-edit"
+                data-tooltip='{{localize "DOCUMENT.Update" type='Gear'}}'
+                data-action='viewDoc'
+                data-document-class='Item'
+                data-type="gear"
+              >{{gear.name}}</a>
             {{else}}
-              <h4>{{item.name}}</h4>
+              <div>{{gear.name}}</div>
             {{/if}}
           </div>
         </li>
       {{/unless}}
     {{/each}}
     <li class="flex-group-right">
-      {{#if @root.system.sheet-unlocked}}
-        <a class="item-control item-create" title="{{localize "DOCUMENT.Create" type="Gear"}}" data-type="gear">
+      {{#if @root.system.sheet_unlocked}}
+        <a
+          class="item-control item-create"
+          data-tooltip="{{localize "DOCUMENT.Create" type="Gear"}}"
+          data-action='createDoc'
+          data-document-class='Item'
+          data-type="gear"
+        >
           <i class="fas fa-plus"></i>
         </a>
       {{/if}}

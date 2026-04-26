@@ -1,20 +1,32 @@
 <div>
   <h3 class="ncou-hacked-font ncou-h3">Tags</h3>
   <ol class="items-list ncou-items-list">
-    {{#each tags as |item id|}}
-      <li class="item flexrow" data-item-id="{{item._id}}">
+    {{#each tags as |tag|}}
+      <li class="item flexrow draggable" data-item-id="{{tag._id}}" data-document-class="Item" data-type="tag">
         <div class="item-name">
-          {{#if @root.system.sheet-unlocked}}
-            <a class="item-control item-edit" title="{{localize "DOCUMENT.Update" type="Tag"}}"><h4>{{item.name}}</h4></a>
+          {{#if @root.system.sheet_unlocked}}
+            <a
+              class="item-control item-edit"
+              data-tooltip='{{localize "DOCUMENT.Update" type='Tag'}}'
+              data-action='viewDoc'
+              data-document-class='Item'
+              data-type="tag"
+            >{{tag.name}}</a>
           {{else}}
-            <h4>{{item.name}}</h4>
+            <div>{{tag.name}}</div>
           {{/if}}
         </div>
       </li>
     {{/each}}
-    <li class="flex-group-right">
-      {{#if @root.system.sheet-unlocked}}
-        <a class="item-control item-create" title="{{localize "DOCUMENT.Create" type="Tag"}}" data-type="tag">
+    <li class="flex-group-right item-create">
+      {{#if @root.system.sheet_unlocked}}
+        <a
+          class="item-control item-create"
+          data-tooltip="{{localize "DOCUMENT.Create" type="Tag"}}"
+          data-action='createDoc'
+          data-document-class='Item'
+          data-type="tag"
+        >
           <i class="fas fa-plus"></i>
         </a>
       {{/if}}

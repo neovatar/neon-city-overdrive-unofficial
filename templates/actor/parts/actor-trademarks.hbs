@@ -4,14 +4,20 @@
     <ol class="items-list">
       {{#each trademarks as |trademark|}}
          <div class="trademark-section">
-          <li class="item flexrow" data-trademarkid="{{trademark._id}}" data-item-id="{{trademark._id}}">
+          <li class="item flexrow draggable trademark" data-item-id="{{trademark._id}}" data-trademarkid="{{trademark._id}}" data-document-class="Item" data-type="trademark">
             <div class="ncou-cyber">
-              {{#if @root.system.sheet-unlocked}}
-                <a class="item-control item-edit" title="{{localize "DOCUMENT.Modify" type="Trademark"}}">
+              {{#if @root.system.sheet_unlocked}}
+                <a
+                  class="item-control item-edit"
+                  data-tooltip='{{localize "DOCUMENT.Update" type='Trademark'}}'
+                  data-action='viewDoc'
+                  data-document-class='Item'
+                  data-type="trademark"
+                >
                   <div class="ncou-trademark-header">{{trademark.name}}</div>
                 </a>
               {{else}}
-                <div class="ncou-trademark-header">{{trademark.name}}</div>
+                <div class="ncou-trademark-header" data-item-id="{{trademark._id}}">{{trademark.name}}</div>
               {{/if}}
             </div>
           </li>
@@ -20,12 +26,16 @@
             {{#each ../edges as |edges trademarkid|}}
               {{#if (eq trademarkid trademark._id)}}  
                 {{#each edges as |item id|}}
-                  <li class="item edge-name flexrow" data-trademarkid="{{trademark._id}}" data-item-id="{{item._id}}">
+                  <li class="item edge-name flexrow draggable" data-item-id="{{item._id}}" data-document-class="Item" data-type="edge">
                     <div class="flexrow">
-                      {{#if @root.system.sheet-unlocked}}
-                        <a class="item-control item-edit" title="{{localize "DOCUMENT.Create" type="Edge"}}">
-                          <div>{{item.name}}</div>
-                        </a>
+                      {{#if @root.system.sheet_unlocked}}
+                        <a
+                          class="item-control item-edit"
+                          data-tooltip='{{localize "DOCUMENT.Update" type='Edge'}}'
+                          data-action='viewDoc'
+                          data-document-class='Item'
+                          data-type="edge"
+                        >{{item.name}}</a>
                       {{else}}
                         <div>{{item.name}}</div>
                       {{/if}}
@@ -34,11 +44,18 @@
                 {{/each}}
               {{/if}}
             {{/each}}
-            {{#if @root.system.sheet-unlocked}}
-              <li class="flex-group-right item-create" data-trademarkid="{{trademark._id}}">
-                <a class="item-control item-create" title="{{localize "DOCUMENT.Create" type="Edge"}}" data-type="edge" data-trademarkid="{{trademark._id}}">
-                  <i class="fas fa-plus"></i>
-                </a>
+            {{#if @root.system.sheet_unlocked}}
+              <li class="flex-group-right item-create">
+                <a
+                  class="item-control item-create"
+                  data-tooltip="{{localize "DOCUMENT.Create" type="Edge"}}"
+                  data-action='createDoc'
+                  data-document-class='Item'
+                  data-type="edge"
+                  data-system.trademarkid="{{trademark._id}}"
+                >
+            <i class="fas fa-plus"></i>
+          </a>
               </li>
             {{/if}}
             </ol>
@@ -46,8 +63,14 @@
         </div>
       {{/each}}
       <li class="flex-group-left">
-        {{#if @root.system.sheet-unlocked}}
-          <a class="item-control item-create" title="{{localize "DOCUMENT.Create" type="Trademark"}}" data-type="trademark">
+        {{#if @root.system.sheet_unlocked}}
+          <a
+            class="item-control item-create"
+            data-tooltip="{{localize "DOCUMENT.Create" type="Trademark"}}"
+            data-action='createDoc'
+            data-document-class='Item'
+            data-type="trademark"
+          >
             <i class="fas fa-plus"></i>
           </a>
         {{/if}}

@@ -12,8 +12,8 @@
   --bg-shade-lightest-dark: rgba(250, 250, 250, 0.1);
   --bg-shade-transparent-dark: rgba(250, 250, 250, 0);
 
-  --bg-image-light: url('../assets/ncou-pattern-light.webp');
-  --bg-image-dark: url('../assets/ncou-pattern-dark.webp');
+  --bg-image-light: url('../assets/ncou-pattern-light-v2.webp');
+  --bg-image-dark: url('../assets/ncou-pattern-dark-v2.webp');
   --dice-plus-light: url('../assets/dice-plus-light.svg');
   --dice-plus-dark: url('../assets/dice-plus-dark.svg');
   --dice-minus-light: url('../assets/dice-minus-light.svg');
@@ -28,26 +28,12 @@
   --bg-shade-lightest: var(--bg-shade-lightest-dark);
   --bg-shade-transparent: var(--bg-shade-transparent-dark);
   --ncou-text-primary: var(--color-tan-lighter);
+  --color-text-primary: var(--color-tan-lighter);
   --dice-plus: var(--dice-plus-dark);
   --dice-minus: var(--dice-minus-dark);
   --color-checkbox: var(--color-tan-lighter);
   --ncou-text-inverted: var(--color-tan-dark);
   --lock-icon: var(--lock-light);
-
-  prose-mirror {
-	  --color-control-bg: #transparent;
-    color: var(--ncou-text-primary);
-  }
-
-  prose-mirror menu {
-    background: var(--color-tan-light);
-  }
-
-  prose-mirror button.toggle {
-    background: var(--bg-shade-lightest);
-    color: var(--ncou-text-primary);
-    border: 1px solid var(--bg-shade-normal);
-  }
 }
 
 .theme-light {
@@ -56,24 +42,10 @@
   --bg-shade-lightest: var(--bg-shade-lightest-light);
   --bg-shade-transparent: var(--bg-shade-transparent-light);
   --ncou-text-primary: var(--color-tan);
+  --color-text-primary: var(--color-tan);
   --dice-plus: var(--dice-plus-light);
   --dice-minus: var(--dice-minus-light);
   --color-checkbox: var(--color-tan);
   --ncou-text-inverted: var(--color-tan-lighter);
   --lock-icon: var(--lock-dark);
-
-  prose-mirror {
-	  --color-control-bg: #transparent;
-    color: var(--ncou-text-primary);
-  }
-
-  prose-mirror menu {
-    background: var(--color-tan-light);
-  }
-
-  prose-mirror button.toggle {
-    background: var(--bg-shade-lightest);
-    color: var(--ncou-text-primary);
-    border: 1px solid var(--bg-shade-normal);
-  }
 }

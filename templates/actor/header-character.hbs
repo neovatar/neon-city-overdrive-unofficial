@@ -1,0 +1,84 @@
+{{! Sheet Header }}
+<header class='sheet-header'>
+  <img class='profile-img' src='{{actor.img}}' data-edit='img' data-action='onEditImage' data-tooltip='{{actor.name}}' height='100' width='100'/>
+  <div class='header-fields'>
+    <div class='flexrow'>
+      <div class='ncou-input-cyber ncou-font-big'>
+        <input name='name' type='text' value='{{actor.name}}' placeholder='Name'/>
+      </div>
+    </div>
+    {{! The grid classes are defined in scss/global/_grid.scss. To use,
+      use both the "ncou-grid" and "ncou-grid-Ncol" class where "N" can be any number
+      from 1 to 12 and will create that number of columns.  
+      https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout }}
+    <div class='resources ncou-grid ncou-grid-12col'>
+
+      {{! "flex-group-center" is defined in the _flex.scss file
+        and it will add a small amount of padding, a border, and will
+        center all of its child elements content and text. }}
+
+      <div class="resource flexcol flex-group-center ncou-grid-span-1">
+        <div class="ability flexrow flex-group-left">
+          <label class="ncou-switch"><input type="checkbox" name="system.sheet_unlocked" value="{{system.sheet_unlocked}}" data-dtype="Boolean" {{checked system.sheet_unlocked}}/><span class="ncou-slider"></span></label>
+        </div>
+      </div>
+
+      <div class='resource flexcol flex-group-center ncou-grid-span-3'>
+        <div class='resource-content flexrow flex-center flex-between'>
+          <label for='system.hits.value' class='ncou-hacked-font ncou-font-medium'>
+            {{localize 'NCOU.Actor.base.FIELDS.hits.label'}}
+          </label>
+          <div class="resource-content flexrow flex-center flex-between flex-group-center">
+            <div class="ncou-input-cyber-small">
+              <input type='text' name='system.hits.value' value='{{system.hits.value}}' data-dtype='Number'/>
+            </div>
+            <span class="ncou-text-primary">&nbsp;/</span>
+            <div class="ncou-input-cyber-small">
+              <input type='text' name='system.hits.max' value='{{system.hits.max}}' data-dtype='Number'/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class='resource flexcol flex-group-center ncou-grid-span-3'>
+        <div class='resource-content flexrow flex-center flex-between'>
+          <label for='system.stuntpoints.value' class='ncou-hacked-font ncou-font-medium'>
+            {{localize 'NCOU.Actor.base.FIELDS.stuntpoints.label'}}
+          </label>
+          <div class="resource-content flexrow flex-center flex-between flex-group-center">
+            <div class="ncou-input-cyber-small">
+              <input type='text' name='system.stuntpoints.value' value='{{system.stuntpoints.value}}' data-dtype='Number'/>
+            </div>
+            <span class="ncou-text-primary">&nbsp;/</span>
+            <div class="ncou-input-cyber-small">
+              <input type='text' name='system.stuntpoints.max' value='{{system.stuntpoints.max}}' data-dtype='Number'/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class='resource flexcol flex-group-center ncou-grid-span-3'>
+        <div class='resource-content flexrow flex-center flex-between'>
+          <label for='system.leverage.value' class='ncou-hacked-font ncou-font-medium'>
+            {{{localize 'NCOU.Actor.base.FIELDS.leverage.label'}}}
+          </label>
+          <div class="ncou-input-cyber-small">
+            <input type='text' name='system.leverage.value' value='{{system.leverage.value}}' data-dtype='Number'/>
+          </div>
+        </div>
+      </div>
+
+      <div class='resource flexcol flex-group-center ncou-grid-span-2'>
+        <div class='resource-content flexrow flex-center flex-between'>
+          <label for='system.experience.value' class='ncou-hacked-font ncou-font-medium'>
+            {{localize 'NCOU.Actor.base.FIELDS.experience.label'}}
+          </label>
+          <div class="ncou-input-cyber-small">
+            <input type='text' name='system.experience.value' value='{{system.experience.value}}' data-dtype='Number'/>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>

@@ -1,21 +1,35 @@
 <div>
   <h3 class="ncou-hacked-font ncou-h3">Flaws</h3>
   <ol class="items-list ncou-items-list ncou-flaw-list">
-    {{#each flaws as |item id|}}
-      <li class="item flexrow" data-item-id="{{item._id}}">
+    {{#each flaws as |flaw|}}
+      <li class="item flexrow draggable" data-item-id="{{flaw._id}}" data-document-class="Item" data-type="flaw">
         <div class="item-name">
-          {{#if @root.system.sheet-unlocked}}
-            <a class="item-control item-edit" title="{{localize "DOCUMENT.Update" type="Flaw"}}"><h4>{{item.name}}</h4></a>
+          {{#if @root.system.sheet_unlocked}}
+            <a
+              class="item-control item-edit"
+              data-tooltip='{{localize "DOCUMENT.Update" type='Flaw'}}'
+              data-action='viewDoc'
+              data-document-class='Item'
+              data-type="flaw"
+            >
+            <div>{{flaw.name}}</div>
+            </a>
           {{else}}
-            <h4>{{item.name}}</h4>
+            <div>{{flaw.name}}</div>
           {{/if}}
         </div>
       </li>
     {{/each}}
     <li>
       <div class="flex-group-right">
-        {{#if @root.system.sheet-unlocked}}
-          <a class="item-control item-create" title="{{localize "DOCUMENT.Create" type="Flaw"}}" data-type="flaw">
+        {{#if @root.system.sheet_unlocked}}
+          <a
+            class="item-control item-create"
+            data-tooltip="{{localize "DOCUMENT.Create" type="Flaw"}}"
+            data-action='createDoc'
+            data-document-class='Item'
+            data-type="flaw"
+          >
             <i class="fas fa-plus"></i>
           </a>
         {{/if}}

@@ -4,27 +4,37 @@ import { ncouItem } from './documents/item.mjs';
 // Import sheet classes.
 import { ncouActorSheet } from './sheets/actor-sheet.mjs';
 import { ncouItemSheet } from './sheets/item-sheet.mjs';
-// Import canvas classes.
-import { ncouToken } from './canvas/token.mjs';
 // Import helper/utility classes and constants.
-import { preloadHandlebarsTemplates } from './helpers/templates.mjs';
 import { NCOU } from './helpers/config.mjs';
+import { preloadHandlebarsTemplates } from './helpers/templates.mjs';
+// Import DataModel classes
+import * as models from './data/_module.mjs';
+
+const collections = foundry.documents.collections;
+const sheets = foundry.appv1.sheets;
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
 /* -------------------------------------------- */
 
-Hooks.once('init', function () {
-  // Add utility classes to the global game object so that they're more easily
-  // accessible in global contexts.
-  game.neoncityoverdriveunofficial = {
+// Add key classes to the global scope so they can be more easily used
+// by downstream developers
+globalThis.neoncityoverdriveunofficial = {
+  documents: {
     ncouActor,
     ncouItem,
+  },
+  applications: {
+    ncouActorSheet,
+    ncouItemSheet,
+  },
+  utils: {
     rollItemMacro,
-  };
+  },
+  models,
+};
 
-  if ( game.release.generation < 12 ) Math.clamp = Math.clamped;
-
+Hooks.once('init', function () {
   // Add custom constants for configuration.
   CONFIG.NCOU = NCOU;
 
@@ -37,10 +47,26 @@ Hooks.once('init', function () {
     decimals: 2,
   };
 
-  // Define custom Document classes
+  // Define custom Document and DataModel classes
   CONFIG.Actor.documentClass = ncouActor;
+
+  // Note that you don't need to declare a DataModel
+  // for the base actor/item classes - they are included
+  // with the Character/NPC as part of super.defineSchema()
+  CONFIG.Actor.dataModels = {
+    character: models.ncouCharacter,
+    npc: models.ncouNPC,
+  };
   CONFIG.Item.documentClass = ncouItem;
-  CONFIG.Token.objectClass = ncouToken;
+  CONFIG.Item.dataModels = {
+    trademark: models.ncouTrademark,
+    edge: models.ncouEdge,
+    trauma: models.ncouTrauma,
+    flaw: models.ncouFlaw,
+    gear: models.ncouGear,
+    action: models.ncouAction,
+    tag: models.ncouTag,
+  };
 
   // Active Effects are never copied to the Actor,
   // but will still apply to the Actor from within the Item
@@ -48,18 +74,17 @@ Hooks.once('init', function () {
   CONFIG.ActiveEffect.legacyTransferral = false;
 
   // Register sheet application classes
-  Actors.unregisterSheet('core', ActorSheet);
-  Actors.registerSheet('neon-city-overdrive-unofficial', ncouActorSheet, {
+  collections.Actors.unregisterSheet('core', sheets.ActorSheet);
+  collections.Actors.registerSheet('neon-city-overdrive-unofficial', ncouActorSheet, {
     makeDefault: true,
     label: 'NCOU.SheetLabels.Actor',
   });
-  Items.unregisterSheet('core', ItemSheet);
-  Items.registerSheet('neon-city-overdrive-unofficial', ncouItemSheet, {
+  collections.Items.unregisterSheet('core', sheets.ItemSheet);
+  collections.Items.registerSheet('neon-city-overdrive-unofficial', ncouItemSheet, {
     makeDefault: true,
     label: 'NCOU.SheetLabels.Item',
   });
 
-  // Preload Handlebars templates.
   return preloadHandlebarsTemplates();
 });
 
@@ -78,7 +103,7 @@ Handlebars.registerHelper('toLowerCase', function (str) {
 
 Hooks.once('ready', function () {
   // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
-  Hooks.on('hotbarDrop', (bar, data, slot) => createItemMacro(data, slot));
+  Hooks.on('hotbarDrop', (bar, data, slot) => createDocMacro(data, slot));
 });
 
 /* -------------------------------------------- */
@@ -92,7 +117,7 @@ Hooks.once('ready', function () {
  * @param {number} slot     The hotbar slot to use
  * @returns {Promise}
  */
-async function createItemMacro(data, slot) {
+async function createDocMacro(data, slot) {
   // First, determine if this is a valid owned item.
   if (data.type !== 'Item') return;
   if (!data.uuid.includes('Actor.') && !data.uuid.includes('Token.')) {

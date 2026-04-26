@@ -9,7 +9,7 @@
 
 **The MIT License (MIT)**
 
-Copyright (c) 2020 neovatar (https://github.com/neovatar)
+Copyright (c) 2026 neovatar (https://github.com/neovatar)
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
@@ -81,7 +81,16 @@ HACKED font Copyright (c) David Libeau and licensed as CC-BY-4.0
 
 Thanks for downloading and don't forget to donate is you liked this font ! -> https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JF3NNU43JJ7E6
 
-By downloading and using the font called HACKED, you agreed this condition :
+By downloading and using the font called HACKED, you agreed this condition:
 Like the licence CC-BY (https://creativecommons.org/licenses/by/4.0/) saying, if you use this font into a published creation, YOU MUST indicate your source by credit the author "David Libeau" and the font's name "Hacked". You can also link the page http://bit.ly/WatchDogsFont.
 
 Discover my other works at http://DavidLibeau.fr
+
+## Icons
+
+The ioncs used in this system are available on https://game-icons.net and licensed as CC-BY-3.0 by the following authors:
+
+- [Lorc](https://lorcblog.blogspot.com/)
+- [Delapouite](https://delapouite.com/)
+- [DarkZaitzev](http://darkzaitzev.deviantart.com/)
+

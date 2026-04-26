@@ -2,13 +2,17 @@
   <h3 class="ncou-hacked-font ncou-h3">Drive</h3>
   <div class="flexrow">
     <div>
-      <input class="ncou-bg-shade-transparent" type="text" name="system.drive.description" value="{{system.drive.description}}"/>
+      {{#if @root.system.sheet_unlocked}}
+        <input class="ncou-input-condition" type="text" name="system.drive.description" value="{{system.drive.description}}"/>
+      {{else}}
+        <div>{{system.drive.description}}</div>
+      {{/if}}
     </div>
   </div>
   <div class="flexrow ncou-spacer"></div>
   <div class="flexrow">
     <div>&nbsp;
-      {{#each system.drive.driveboxes as |drivebox key|}}
+      {{#each system.driveboxes as |drivebox key|}}
         <input class="ncou-check-cyber" type="checkbox" name="system.drive.driveboxes.{{key}}.value" value="{{drivebox.value}}" data-dtype="Boolean" {{checked drivebox.value}}/>&nbsp;
       {{/each}}
     </div>

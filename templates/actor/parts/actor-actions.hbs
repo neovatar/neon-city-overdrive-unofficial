@@ -1,20 +1,32 @@
 <div>
   <h3 class="ncou-hacked-font ncou-h3">Actions</h3>
   <ol class="items-list ncou-items-list">
-    {{#each actions as |item id|}}
-      <li class="item flexrow" data-item-id="{{item._id}}">
+    {{#each actions as |action|}}
+      <li class="item flexrow draggable" data-item-id="{{action._id}}" data-document-class="Item" data-type="action">
         <div class="item-name">
-          {{#if @root.system.sheet-unlocked}}
-            <a class="item-control item-edit" title="{{localize "DOCUMENT.Update" type="Action"}}"><h4>{{item.name}}</h4></a>
+          {{#if @root.system.sheet_unlocked}}
+            <a
+              class="item-control item-edit"
+              data-tooltip='{{localize "DOCUMENT.Update" type='Action'}}'
+              data-action='viewDoc'
+              data-document-class='Item'
+              data-type="action"
+            >{{action.name}}</a>
           {{else}}
-            <h4>{{item.name}}</h4>
+            <div>{{action.name}}</div>
           {{/if}}
         </div>
       </li>
     {{/each}}
-    <li class="flex-group-right">
-      {{#if @root.system.sheet-unlocked}}
-        <a class="item-control item-create" title="{{localize "DOCUMENT.Create" type="Action"}}" data-type="action">
+    <li class="flex-group-right item-create">
+      {{#if @root.system.sheet_unlocked}}
+        <a
+          class="item-control item-create"
+          data-tooltip="{{localize "DOCUMENT.Create" type="action"}}"
+          data-action='createDoc'
+          data-document-class='Item'
+          data-type="action"
+        >
           <i class="fas fa-plus"></i>
         </a>
       {{/if}}

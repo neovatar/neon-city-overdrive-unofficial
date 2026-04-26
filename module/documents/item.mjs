@@ -17,8 +17,8 @@ export class ncouItem extends Item {
    * @override
    */
   getRollData() {
-    // Starts off by populating the roll data with `this.system`
-    const rollData = { ...super.getRollData() };
+    // Starts off by populating the roll data with a shallow copy of `this.system`
+    const rollData = { ...this.system };
 
     // Quit early if there's no parent actor
     if (!this.actor) return rollData;
@@ -34,7 +34,7 @@ export class ncouItem extends Item {
    * @param {Event} event   The originating click event
    * @private
    */
-  async roll() {
+  async roll(event) {
     const item = this;
 
     // Initialize chat data.
@@ -57,7 +57,7 @@ export class ncouItem extends Item {
       const rollData = this.getRollData();
 
       // Invoke the roll and submit it to chat.
-      const roll = new Roll(rollData.formula, rollData);
+      const roll = new Roll(rollData.formula, rollData.actor);
       // If you need to store the value first, uncomment the next line.
       // const result = await roll.evaluate();
       roll.toMessage({
@@ -69,7 +69,7 @@ export class ncouItem extends Item {
     }
   }
 
-  async _onDelete(options, userId) {
+async _onDelete(options, userId) {
     super._onDelete(options, userId);
     if (!this.actor) return;
     // On deletion of an edge, remove it from the trademark
@@ -94,14 +94,12 @@ export class ncouItem extends Item {
   }
 
   async _onCreate(data, options, userId) {
-    super._onCreate(options, userId);
     // On creation of an edge, add it to the trademarks edge list
     if (this.type === 'edge') {
       if (this.parent) {
-        const trademarkid = this.system.trademarkid;
+        const trademarkid = data.system.trademarkid;
         if (trademarkid) {
-          console.log('----- TRADEMARKID FOUND -----');
-          console.log(trademarkid);
+          console.log("Neon City Overdrive | ncouItem | _onCreate | trademarkid exists", trademarkid);
           const trademark = this.actor.items.get(trademarkid);
           let edgeIds = trademark.system.edgeIds;
           edgeIds.push(this._id);
@@ -109,5 +107,13 @@ export class ncouItem extends Item {
         }
       }
     }
+    super._onCreate(data, options, userId);
   }
+
+  async _preCreate(data, options, userId) {
+    const imageBasePath = "systems/neon-city-overdrive-unofficial/assets";
+    this.updateSource({ img: `${imageBasePath}/item-${this.type}.svg` });
+    console.log("Neon City Overdrive | ncouItem | _preCreate | data after modification", data);
+  }
+
 }

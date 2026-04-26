@@ -9,7 +9,9 @@
 }
 
 .ncou-h3 {
-  border-bottom: 1px solid var(--ncou-text-primary);  
+  border-bottom: 1px solid var(--ncou-text-primary);
+  font-size: 1.3em;
+  font-weight: normal;
 }
 
 .ncou-text-primary {
@@ -67,7 +69,7 @@
   float: left;
   input[type=text] {
     border: none;
-    padding: 0px 0em 0em 5px;
+    padding: 0px 0em 0em 15px;
     background: transparent;
     margin: 0px 0px 0px 0px;
     height: auto;
@@ -88,7 +90,6 @@
 
 .ncou-input-cyber-small {
   position: relative;
-  float: left;
   input[type=text] {
     border: none;
     padding-left: 5px;
@@ -97,6 +98,8 @@
     min-width: 3ch;
     height: auto;
     color: var(--ncou-text-primary);
+    text-align: inherit;
+    line-height: inherit;
   }
 }
 
@@ -109,6 +112,11 @@
     clip-path: polygon(calc(100% - 7px) 0, 100% 25%, 100% 100%, 0 100%, 0 0);
     background-color: var(--bg-shade-normal);
     pointer-events: none;
+}
+
+.ncou-input-condition {
+  background: var(--bg-shade-normal);
+  height: 1.3em;
 }
 
 .ncou-box-notop {
@@ -235,27 +243,30 @@
 }
 
 .ncou-check-cyber {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  margin: 0;
+  color: currentColor;
   width: $ncou-checkbox-size;
   height: $ncou-checkbox-size;
   border: 2px solid $ncou-checkbox-color;
   border-radius: 3px;
-  -webkit-appearance: none;
-  appearance: none;
   outline: none;
   vertical-align: middle;
-  margin: 0;
   cursor: pointer;
+  place-content: center;
+  // transform: translateY(-0.075em);
 }
 
 .ncou-check-cyber::before {
-  content: " ";
+  content: "";
   width: $ncou-checkbox-inner-size;
   height: $ncou-checkbox-inner-size;
   background-color: $ncou-checkbox-inner-color;
-  position: relative;
+  border-radius: 1px;
   top: calc(($ncou-checkbox-size - $ncou-checkbox-inner-size) / 2 - 2px);
   left: calc(($ncou-checkbox-size - $ncou-checkbox-inner-size) / 2 - 2px);
-  display: block;
   -webkit-transform: scale(0);
   transform: scale(0);
   -webkit-transition: 120ms transform ease-in-out;
@@ -265,6 +276,11 @@
 .ncou-check-cyber:checked:before {
   -webkit-transform: scale(1);
   transform: scale(1);
+  content: "";
+}
+
+.ncou-check-cyber:checked:after {
+  content: "";
 }
 
  /* The switch - the box around the slider */
@@ -325,5 +341,9 @@ input:checked + .ncou-slider:before {
 
 .ncou-trademark-header {
   padding: 0px 0em 0em 5px;
+}
+
+.editor-content {
+  position: relative;
 }
 

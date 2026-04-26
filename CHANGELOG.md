@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 13.0.0
+
+### Changed
+- BREAKING CHANGE: Switch to ApplicationV2 for Foundry VTT 13+
+
 ## 0.3.0
 
 ### Added
