@@ -3,7 +3,7 @@
   <ol class="items-list ncou-items-list">
     {{#each tags as |tag|}}
       <li class="item flexrow draggable" data-item-id="{{tag._id}}" data-document-class="Item" data-type="tag">
-        <div class="item-name">
+        <div>
           {{#if @root.system.sheet_unlocked}}
             <a
               class="item-control item-edit"

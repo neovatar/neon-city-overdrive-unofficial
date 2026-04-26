@@ -3,7 +3,7 @@
   <ol class="items-list ncou-items-list ncou-flaw-list">
     {{#each flaws as |flaw|}}
       <li class="item flexrow draggable" data-item-id="{{flaw._id}}" data-document-class="Item" data-type="flaw">
-        <div class="item-name">
+        <div>
           {{#if @root.system.sheet_unlocked}}
             <a
               class="item-control item-edit"

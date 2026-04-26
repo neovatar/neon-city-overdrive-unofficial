@@ -46,7 +46,7 @@
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   height: auto;
-  font-size: 15px;
+  // font-size: 15px;
   line-height: 2em;
   text-decoration: none;
 }
@@ -341,9 +341,17 @@ input:checked + .ncou-slider:before {
 
 .ncou-trademark-header {
   padding: 0px 0em 0em 5px;
+  //font-size: 25px;
 }
 
 .editor-content {
   position: relative;
 }
 
+.ncou-gear-list {
+  border-bottom: none !important;
+}
+
+.ncou-actor-header {
+  min-height: 7.5em;
+}

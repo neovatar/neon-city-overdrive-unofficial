@@ -8,7 +8,7 @@
       "Tabs": {
         "Biography": "Biography",
         "Statistics": "Statistics",
-        "StatisticsNPC": "Statistics (NPC)"
+        "StatisticsNPC": "Statistics"
       },
       "base": {
         "FIELDS": {

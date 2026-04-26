@@ -1,10 +1,10 @@
 <div>
   <h3 class="ncou-hacked-font ncou-h3">Gear</h3>
-  <ol class="items-list ncou-items-list">
+  <ol class="items-list ncou-items-list ncou-gear-list">
     {{#each gear as |gear id|}}
       {{#unless (eq system.tags "")}}
-        <li class="item flexrow draggable" data-item-id="{{gear._id}}" data-document-class="Item" data-type="gear">
-          <div class="item-name">
+        <li class="flexrow draggable" data-item-id="{{gear._id}}" data-document-class="Item" data-type="gear">
+          <div>
           {{#if @root.system.sheet_unlocked}}
               <a
                 class="item-control item-edit"
@@ -19,11 +19,11 @@
           </div>
         </li>
         <li class="gear-tags">
-          <i class="fa-solid fa-tags"></i> {{system.tags}}
+          <div class="ncou-geartags"><i class="fa-solid fa-tags"></i> {{system.tags}}</div>
         </li>
       {{else}}
         <li class="item flexrow draggable" data-item-id="{{gear._id}}" data-document-class="Item" data-type="gear">
-          <div class="item-name">
+          <div>
             {{#if @root.system.sheet_unlocked}}
               <a
                 class="item-control item-edit"

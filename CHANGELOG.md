@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 13.0.1
+
+### Fixed
+- Font size adjustments
+- Character sheet header minimum size
+
 ## 13.0.0
 
 ### Changed

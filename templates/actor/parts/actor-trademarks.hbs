@@ -25,8 +25,8 @@
             <ol class="items-list ncou-items-list ncou-edge-list ncou-box-notop">
             {{#each ../edges as |edges trademarkid|}}
               {{#if (eq trademarkid trademark._id)}}  
-                {{#each edges as |item id|}}
-                  <li class="item edge-name flexrow draggable" data-item-id="{{item._id}}" data-document-class="Item" data-type="edge">
+                {{#each edges as |edge id|}}
+                  <li class="item flexrow draggable" data-item-id="{{edge._id}}" data-document-class="Item" data-type="edge">
                     <div class="flexrow">
                       {{#if @root.system.sheet_unlocked}}
                         <a
@@ -35,9 +35,9 @@
                           data-action='viewDoc'
                           data-document-class='Item'
                           data-type="edge"
-                        >{{item.name}}</a>
+                        >{{edge.name}}</a>
                       {{else}}
-                        <div>{{item.name}}</div>
+                        <div>{{edge.name}}</div>
                       {{/if}}
                     </div>
                   </li>

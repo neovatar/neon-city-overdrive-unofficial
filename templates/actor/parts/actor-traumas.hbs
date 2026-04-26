@@ -1,9 +1,9 @@
-<div>
+<div class="trauma-section">
   <h3 class="ncou-hacked-font ncou-h3">Traumas</h3>
   <ol class="items-list ncou-items-list ncou-trauma-list">
     {{#each traumas as |trauma|}}
       <li class="item flexrow draggable" data-item-id="{{trauma._id}}" data-document-class="Item" data-type="trauma">
-        <div class="item-name">
+        <div>
           {{#if @root.system.sheet_unlocked}}
             <a
               class="item-control item-edit"
