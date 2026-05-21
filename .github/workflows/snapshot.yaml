@@ -10,12 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       # Load the system.json manifest into memory
       - name: Load system manifest
         id: manifest
-        uses: zoexx/github-action-json-file-properties@release
+        uses: neovatar/github-action-json-file-properties@266d764d4b7807210a1d04d077b897ac347e3bab
         with:
           file_path: "./system.json"
 

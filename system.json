@@ -77,7 +77,7 @@
   "packFolders": [],
   "socket": false,
   "manifest": "https://github.com/neovatar/neon-city-overdrive-unofficial/releases/latest/download/system.json",
-  "download": "https://github.com/neovatar/neon-city-overdrive-unofficial/releases/download/release-13.0.2/ncou.zip",
+  "download": "https://github.com/neovatar/neon-city-overdrive-unofficial/releases/download/release-13.0.3/ncou.zip",
   "background": "systems/neon-city-overdrive-unofficial/assets/ncou-setup.webp",
   "grid": {
     "type": 1,
