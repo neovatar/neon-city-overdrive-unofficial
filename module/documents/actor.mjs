@@ -42,8 +42,6 @@ export class ncouActor extends Actor {
     return { ...super.getRollData(), ...(this.system.getRollData?.() ?? null) };
   }
 
-  async _preCreate(data, options, userId) {
-    console.log("Neon City Overdrive | ncouItem | _preCreate | data", data);
-    console.log("Neon City Overdrive | ncouItem | _preCreate | options", options);
-  }
+  // async _preCreate(data, options, userId) {
+  // }
 }

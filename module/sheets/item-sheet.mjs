@@ -204,7 +204,6 @@ export class ncouItemSheet extends api.HandlebarsApplicationMixin(
    */
   static async #itemDelete(event, target) {
     event.preventDefault();
-    console.log('XXXXX Deleting item via item sheet.');
     this.item?.deleteDialog();
   }
 
@@ -292,7 +291,6 @@ export class ncouItemSheet extends api.HandlebarsApplicationMixin(
    * @protected
    */
   _onDragStart(event) {
-    console.log("Neon City Overdrive | ItemSheet | Drag start event", event);
     const li = event.currentTarget;
     if ('link' in event.target.dataset) return;
 

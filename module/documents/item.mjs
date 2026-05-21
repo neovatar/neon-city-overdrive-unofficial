@@ -71,6 +71,7 @@ export class ncouItem extends Item {
 
 async _onDelete(options, userId) {
     super._onDelete(options, userId);
+    if (game.user.id !== userId) return;
     if (!this.actor) return;
     // On deletion of an edge, remove it from the trademark
     if (this.type === 'edge') {
@@ -95,11 +96,11 @@ async _onDelete(options, userId) {
 
   async _onCreate(data, options, userId) {
     // On creation of an edge, add it to the trademarks edge list
+    if (game.user.id !== userId) return;
     if (this.type === 'edge') {
       if (this.parent) {
         const trademarkid = data.system.trademarkid;
         if (trademarkid) {
-          console.log("Neon City Overdrive | ncouItem | _onCreate | trademarkid exists", trademarkid);
           const trademark = this.actor.items.get(trademarkid);
           let edgeIds = trademark.system.edgeIds;
           edgeIds.push(this._id);
@@ -113,7 +114,6 @@ async _onDelete(options, userId) {
   async _preCreate(data, options, userId) {
     const imageBasePath = "systems/neon-city-overdrive-unofficial/assets";
     this.updateSource({ img: `${imageBasePath}/item-${this.type}.svg` });
-    console.log("Neon City Overdrive | ncouItem | _preCreate | data after modification", data);
   }
 
 }

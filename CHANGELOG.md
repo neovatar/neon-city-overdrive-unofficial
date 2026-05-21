@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 13.0.3
+
+### Fixed
+- deleting items on character sheet no longer triggers error for other connected clients
+
 ## 13.0.2
 
 ### Fixed
