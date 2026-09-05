@@ -370,19 +370,6 @@ export class ncouActorSheet extends api.HandlebarsApplicationMixin(sheets.ActorS
   }
 
   /**
-   * Toggle whether an edge is an edge or trigger in the edge list.
-   *
-   * @this ncouActorSheet
-   * @param {PointerEvent} event   The originating click event
-   * @param {HTMLElement} target   The checkbox which defined the action
-   * @protected
-   */
-  static async _toggleEdge(event, target) {
-    const edge = this._getEmbeddedDocument(target);
-    await edge.update({ 'system.isEdge': target.checked });
-  }
-
-  /**
    * Handle clickable rolls.
    *
    * @this ncouActorSheet

@@ -141,7 +141,6 @@ export class ncouItemSheet extends api.HandlebarsApplicationMixin(
       switch (partId) {
         case 'header':
         case 'headerGear':
-        case 'headerEdge':
         case 'tabs':
           return tabs;
         case 'description':

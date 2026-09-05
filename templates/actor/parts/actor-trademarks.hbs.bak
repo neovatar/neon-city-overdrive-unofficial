@@ -56,7 +56,6 @@
                   data-document-class='Item'
                   data-type="edge"
                   data-system.trademarkid="{{trademark._id}}"
-                  data-system.isEdge="false"
                 >
             <i class="fas fa-plus"></i>
           </a>

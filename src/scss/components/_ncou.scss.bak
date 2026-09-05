@@ -271,11 +271,6 @@
   color: var(--ncou-text-primary);
 }
 
-.ncou-edge-checkbox-wrapper {
-  flex: 0 0 auto;
-  margin-right: 0.5em;
-}
-
 .ncou-check-cyber {
   appearance: none;
   -webkit-appearance: none;
