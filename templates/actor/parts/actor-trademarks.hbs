@@ -27,6 +27,9 @@
               {{#if (eq trademarkid trademark._id)}}  
                 {{#each edges as |edge id|}}
                   <li class="item flexrow draggable" data-item-id="{{edge._id}}" data-document-class="Item" data-type="edge">
+                    <div class="ncou-check ncou-edge-checkbox-wrapper">
+                      <input class="ncou-check-cyber ncou-edge-checkbox" type="checkbox" data-action="toggleEdge" data-dtype="Boolean" {{checked system.isEdge}}/>
+                    </div>
                     <div class="flexrow">
                       {{#if @root.system.sheet_unlocked}}
                         <a
@@ -53,6 +56,7 @@
                   data-document-class='Item'
                   data-type="edge"
                   data-system.trademarkid="{{trademark._id}}"
+                  data-system.isEdge="false"
                 >
             <i class="fas fa-plus"></i>
           </a>

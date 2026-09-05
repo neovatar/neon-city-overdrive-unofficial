@@ -159,6 +159,35 @@
     margin-right: 0.5em;
   }
 
+  li.item::before {
+    content: none;
+    display: none;
+  }
+
+  .ncou-edge-checkbox {
+    background: transparent;
+    border: 2px solid $ncou-checkbox-color;
+    background-size: 18px 18px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .ncou-edge-checkbox::before {
+    content: none;
+    display: none;
+    transform: none;
+  }
+
+  .ncou-edge-checkbox::after {
+    content: none;
+    display: none;
+  }
+
+  .ncou-edge-checkbox:checked {
+    border-color: transparent;
+    background-image: var(--dice-plus);
+  }
+
   li.item-create:last-child::before { 
     content: none;
     display: inline-block;
@@ -240,6 +269,11 @@
 
 .ncou-check {
   color: var(--ncou-text-primary);
+}
+
+.ncou-edge-checkbox-wrapper {
+  flex: 0 0 auto;
+  margin-right: 0.5em;
 }
 
 .ncou-check-cyber {

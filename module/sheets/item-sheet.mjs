@@ -42,6 +42,9 @@ export class ncouItemSheet extends api.HandlebarsApplicationMixin(
     headerGear: {
       template: 'systems/neon-city-overdrive-unofficial/templates/item/header-gear.hbs',
     },
+    headerEdge: {
+      template: 'systems/neon-city-overdrive-unofficial/templates/item/header-edge.hbs',
+    },
     description: {
       template: 'systems/neon-city-overdrive-unofficial/templates/item/description.hbs',
     },
@@ -54,6 +57,9 @@ export class ncouItemSheet extends api.HandlebarsApplicationMixin(
     // Not all parts always render
     if (this.document.type == 'gear') {
       options.parts.unshift('headerGear');
+    }
+    else if (this.document.type == 'edge') {
+      options.parts.unshift('headerEdge');
     }
     else {
       options.parts.unshift('header');
@@ -135,6 +141,7 @@ export class ncouItemSheet extends api.HandlebarsApplicationMixin(
       switch (partId) {
         case 'header':
         case 'headerGear':
+        case 'headerEdge':
         case 'tabs':
           return tabs;
         case 'description':
